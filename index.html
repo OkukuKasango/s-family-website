@@ -7,7 +7,7 @@
 
 <title>S-Family Limited | Electrical & Plumbing Services</title>
 
-<meta name="description" content="S-Family Limited provides professional electrical and plumbing services in Usenge, Bondo, Kenya. Call or WhatsApp for fast service.">
+<meta name="description" content="S-Family Limited offers professional electrical and plumbing services in Usenge, Bondo, Kenya. Fast, reliable and affordable.">
 
 <style>
 :root {
@@ -114,7 +114,7 @@ nav a {
 .whatsapp { background: #25D366; }
 .call { background: #0d6efd; }
 
-/* FLOAT */
+/* FLOAT BUTTON */
 .float {
   position: fixed;
   bottom: 20px;
@@ -181,8 +181,8 @@ footer {
 <div id="about" class="card">
   <h2>About Us</h2>
   <p>
-    We are a trusted electrical and plumbing company providing fast,
-    reliable and affordable services across Bondo and surrounding areas.
+    We provide reliable electrical and plumbing services in Kenya.
+    Trusted, affordable, and professional solutions for homes and businesses.
   </p>
 </div>
 
@@ -220,16 +220,16 @@ footer {
   <a class="btn whatsapp" href="https://wa.me/254712910613">WhatsApp</a>
   <a class="btn call" href="tel:+254712910613">Call Now</a>
 
-  <h3>Send a Request</h3>
+  <h3>Send Service Request</h3>
 
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Phone Number">
-    <textarea rows="4" placeholder="What service do you need?"></textarea>
-    <button type="button">Submit Request</button>
+  <form id="serviceForm">
+    <input id="name" placeholder="Your Name" required>
+    <input id="phone" placeholder="Phone Number" required>
+    <textarea id="message" placeholder="Describe your problem" required></textarea>
+    <button type="submit">Submit Request</button>
   </form>
 
-  <h3>Our Location</h3>
+  <h3>Location</h3>
   <iframe
     src="https://www.google.com/maps?q=Usenge%20Bondo%20Kenya&output=embed"
     width="100%" height="250" style="border:0;border-radius:10px;">
@@ -239,12 +239,43 @@ footer {
 
 </div>
 
-<!-- FLOAT BUTTON -->
+<!-- FLOAT -->
 <a class="float" href="https://wa.me/254712910613">💬 Chat</a>
 
 <footer>
   © 2026 S-Family Limited | All Rights Reserved
 </footer>
+
+<!-- FIREBASE (COMMERCIAL BACKEND) -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "PASTE_YOURS",
+  authDomain: "PASTE_YOURS",
+  projectId: "PASTE_YOURS",
+  storageBucket: "PASTE_YOURS",
+  messagingSenderId: "PASTE_YOURS",
+  appId: "PASTE_YOURS"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+document.getElementById("serviceForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  await addDoc(collection(db, "requests"), {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("message").value,
+    time: new Date()
+  });
+
+  alert("Request submitted successfully!");
+});
+</script>
 
 </body>
 </html>
