@@ -4,62 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>S-Family Limited | Electrical & Plumbing Services</title>
-
-<meta name="description" content="Trusted electrical and plumbing services in Usenge, Bondo, Kenya.">
-<meta name="keywords" content="electrician Bondo, plumber Usenge, electrical services Kenya">
-<meta name="author" content="S-Family Limited">
-
-<link rel="icon" href="logo.png">
+<title>S-Family CRM System</title>
 
 <style>
-:root{
-  --primary:#0f766e;
-  --dark:#064e3b;
-  --light:#f4f6f8;
-}
-
-html{ scroll-behavior:smooth; }
-
 body{
+  font-family:Arial;
   margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--light);
-  color:#333;
+  background:#f4f6f8;
 }
 
-/* NAV */
-nav{
-  position:sticky;
-  top:0;
-  background:var(--primary);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 20px;
-}
-
-nav .logo{
+header{
+  background:#0f766e;
   color:white;
-  font-weight:bold;
-}
-
-nav div a{
-  color:white;
-  margin-left:15px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.hero{
-  background:linear-gradient(135deg,var(--primary),var(--dark));
-  color:white;
+  padding:20px;
   text-align:center;
-  padding:90px 20px;
 }
 
 .container{
-  max-width:1100px;
+  max-width:1000px;
   margin:auto;
   padding:20px;
 }
@@ -68,140 +30,199 @@ nav div a{
   background:white;
   padding:20px;
   margin:20px 0;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-h2{ color:var(--primary); }
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.box{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.box img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.box div{
-  padding:10px;
-  text-align:center;
-  font-weight:bold;
-}
-
-/* FORM */
 input,textarea{
   width:100%;
-  padding:12px;
+  padding:10px;
   margin-top:10px;
   border-radius:8px;
   border:1px solid #ccc;
-  box-sizing:border-box;
 }
 
 button{
-  width:100%;
   padding:12px;
   margin-top:10px;
+  width:100%;
   border:none;
-  background:var(--primary);
-  color:white;
   border-radius:8px;
-  font-size:16px;
+  background:#0f766e;
+  color:white;
   cursor:pointer;
 }
 
-footer{
-  text-align:center;
-  background:#222;
+.whatsapp{
+  background:#25D366;
+}
+
+.admin-btn{
+  background:#333;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+th,td{
+  border:1px solid #ddd;
+  padding:8px;
+  font-size:14px;
+}
+
+th{
+  background:#0f766e;
   color:white;
-  padding:20px;
+}
+
+.small-btn{
+  padding:5px;
+  font-size:12px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">S-FAMILY LTD</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <h1>S-Family Limited</h1>
-  <p>Electrical & Plumbing Services in Usenge & Bondo</p>
-</section>
+<header>
+  <h2>S-Family Business System (CRM)</h2>
+</header>
 
 <div class="container">
 
-<!-- ABOUT -->
-<div id="about" class="card">
-  <h2>About Us</h2>
-  <p>We provide trusted electrical and plumbing services in Usenge, Bondo and surrounding areas.</p>
+<!-- FORM -->
+<div class="card">
+  <h2>New Service Request</h2>
+
+  <input id="name" placeholder="Customer Name">
+  <input id="phone" placeholder="Phone">
+  <input id="location" placeholder="Location">
+  <input id="service" placeholder="Service (Electrical / Plumbing / Solar)">
+  <textarea id="issue" placeholder="Issue Description"></textarea>
+
+  <button onclick="saveRequest()">💾 Save Request</button>
+  <button class="whatsapp" onclick="sendWhatsApp()">📲 Send WhatsApp</button>
 </div>
 
-<!-- SERVICES -->
-<div id="services" class="card">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="box">
-      <img src="work1.jpg">
-      <div>Electrical Wiring</div>
-    </div>
-    <div class="box">
-      <img src="work2.jpg">
-      <div>Plumbing Installation</div>
-    </div>
-    <div class="box">
-      <img src="work3.jpg">
-      <div>Repairs & Maintenance</div>
-    </div>
-  </div>
-</div>
+<!-- ADMIN PANEL -->
+<div class="card">
+  <h2>Admin Dashboard</h2>
 
-<!-- CONTACT -->
-<div id="contact" class="card">
-  <h2>Contact Us</h2>
+  <button class="admin-btn" onclick="loadData()">🔄 Refresh Data</button>
+  <button onclick="downloadCSV()">📥 Download CSV</button>
 
-  <p>📍 Usenge, Bondo, Kenya</p>
-  <p>📞 +254712910613</p>
-
-  <h3>Request Service</h3>
-
-  <form action="https://formspree.io/f/xykonogz" method="POST">
-
-    <input type="text" name="name" placeholder="Your Name" required>
-
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-
-    <!-- NEW LOCATION FIELD -->
-    <input type="text" name="location" placeholder="Your Location (Estate / Village / Town)" required>
-
-    <textarea name="message" rows="5" placeholder="Describe your issue" required></textarea>
-
-    <button type="submit">Send Request</button>
-
-  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Service</th>
+        <th>Location</th>
+        <th>Issue</th>
+        <th>Invoice</th>
+      </tr>
+    </thead>
+    <tbody id="dataTable"></tbody>
+  </table>
 </div>
 
 </div>
 
-<footer>
-  © 2026 S-Family Limited | Electrical & Plumbing Services
-</footer>
+<script>
+
+// SAVE DATA
+function saveRequest(){
+  let data = {
+    name:document.getElementById("name").value,
+    phone:document.getElementById("phone").value,
+    service:document.getElementById("service").value,
+    location:document.getElementById("location").value,
+    issue:document.getElementById("issue").value
+  };
+
+  let records = JSON.parse(localStorage.getItem("requests") || "[]");
+  records.push(data);
+  localStorage.setItem("requests", JSON.stringify(records));
+
+  alert("Request Saved!");
+  loadData();
+}
+
+// LOAD DATA
+function loadData(){
+  let records = JSON.parse(localStorage.getItem("requests") || "[]");
+  let table = document.getElementById("dataTable");
+  table.innerHTML = "";
+
+  records.forEach((r,i)=>{
+    table.innerHTML += `
+      <tr>
+        <td>${r.name}</td>
+        <td>${r.phone}</td>
+        <td>${r.service}</td>
+        <td>${r.location}</td>
+        <td>${r.issue}</td>
+        <td><button class="small-btn" onclick="invoice(${i})">Generate</button></td>
+      </tr>
+    `;
+  });
+}
+
+// WHATSAPP
+function sendWhatsApp(){
+  let msg =
+`New Request:
+Name: ${document.getElementById("name").value}
+Phone: ${document.getElementById("phone").value}
+Service: ${document.getElementById("service").value}
+Location: ${document.getElementById("location").value}
+Issue: ${document.getElementById("issue").value}`;
+
+  window.open("https://wa.me/254712910613?text=" + encodeURIComponent(msg));
+}
+
+// CSV DOWNLOAD
+function downloadCSV(){
+  let records = JSON.parse(localStorage.getItem("requests") || "[]");
+  let csv = "Name,Phone,Service,Location,Issue\n";
+
+  records.forEach(r=>{
+    csv += `${r.name},${r.phone},${r.service},${r.location},${r.issue}\n`;
+  });
+
+  let blob = new Blob([csv], {type:"text/csv"});
+  let url = URL.createObjectURL(blob);
+
+  let a = document.createElement("a");
+  a.href = url;
+  a.download = "requests.csv";
+  a.click();
+}
+
+// INVOICE
+function invoice(i){
+  let records = JSON.parse(localStorage.getItem("requests") || "[]");
+  let r = records[i];
+
+  let win = window.open();
+  win.document.write(`
+    <h2>INVOICE - S-Family Ltd</h2>
+    <p><b>Name:</b> ${r.name}</p>
+    <p><b>Phone:</b> ${r.phone}</p>
+    <p><b>Service:</b> ${r.service}</p>
+    <p><b>Location:</b> ${r.location}</p>
+    <p><b>Issue:</b> ${r.issue}</p>
+    <hr>
+    <h3>Total: (Set your price manually)</h3>
+  `);
+}
+
+loadData();
+
+</script>
 
 </body>
 </html>
