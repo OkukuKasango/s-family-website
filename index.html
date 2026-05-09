@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,204 +6,276 @@
 
 <title>S-Family Limited | Electrical & Plumbing Services</title>
 
-<meta name="description" content="S-Family Limited offers professional electrical and plumbing services in Usenge, Bondo, Kenya. Fast, reliable and affordable.">
+<meta name="description" content="Professional electrical and plumbing services in Usenge, Bondo, Kenya.">
 
 <style>
-:root {
-  --primary: #0d6efd;
-  --dark: #0a58ca;
+
+:root{
+  --primary:#0d6efd;
+  --dark:#0a58ca;
+  --light:#f4f6f8;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  color: #333;
+html{
+  scroll-behavior:smooth;
 }
 
-/* HEADER */
-header {
-  background: linear-gradient(135deg, var(--primary), var(--dark));
-  color: white;
-  text-align: center;
-  padding: 70px 20px;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#333;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 42px;
+/* NAVIGATION */
+nav{
+  position:sticky;
+  top:0;
+  background:var(--primary);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  z-index:1000;
 }
 
-header p {
-  font-size: 18px;
+nav .logo{
+  color:white;
+  font-size:20px;
+  font-weight:bold;
 }
 
-/* NAV */
-nav {
-  position: sticky;
-  top: 0;
-  background: var(--primary);
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  color: white;
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:15px;
+  font-weight:bold;
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
+/* HERO SECTION */
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--dark));
+  color:white;
+  text-align:center;
+  padding:90px 20px;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+.hero h1{
+  margin:0;
+  font-size:45px;
 }
 
-/* CARD */
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.hero p{
+  margin-top:10px;
+  font-size:18px;
 }
 
-/* SERVICES */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+.hero .btn{
+  margin-top:20px;
 }
 
-.box {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+/* GENERAL */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
 
-.box img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.card{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  margin:20px 0;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-.box div {
-  padding: 10px;
-  font-weight: bold;
+h2{
+  color:var(--primary);
 }
 
 /* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 12px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  margin: 5px;
-  font-weight: bold;
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.whatsapp { background: #25D366; }
-.call { background: #0d6efd; }
-
-/* FLOAT BUTTON */
-.float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 16px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
+.whatsapp{
+  background:#25D366;
 }
 
-/* FORM */
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.call{
+  background:var(--primary);
 }
 
-button {
-  background: var(--primary);
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  cursor: pointer;
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.box{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:translateY(-5px);
+}
+
+.box img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.box div{
+  padding:15px;
+  font-weight:bold;
+  text-align:center;
+}
+
+/* CONTACT FORM */
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+}
+
+button{
+  margin-top:10px;
+  padding:12px;
+  width:100%;
+  border:none;
+  background:var(--primary);
+  color:white;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* FLOATING WHATSAPP */
+.float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  background: #222;
-  color: white;
-  padding: 15px;
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
 <!-- NAV -->
 <nav>
-  <div><b>S-FAMILY LTD</b></div>
+  <div class="logo">S-FAMILY LTD</div>
+
   <div>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header>
+<section class="hero">
   <h1>S-Family Limited</h1>
-  <p>Electrical & Plumbing Experts in Usenge, Bondo</p>
-</header>
+  <p>Professional Electrical & Plumbing Services</p>
+
+  <a class="btn whatsapp" href="https://wa.me/254712910613">
+    WhatsApp Us
+  </a>
+
+  <a class="btn call" href="tel:+254712910613">
+    Call Now
+  </a>
+</section>
 
 <div class="container">
 
 <!-- ABOUT -->
 <div id="about" class="card">
   <h2>About Us</h2>
+
   <p>
-    We provide reliable electrical and plumbing services in Kenya.
-    Trusted, affordable, and professional solutions for homes and businesses.
+    S-Family Limited provides trusted electrical and plumbing services
+    in Usenge, Bondo and surrounding areas.
+    We focus on quality workmanship, reliability and customer satisfaction.
   </p>
 </div>
 
 <!-- SERVICES -->
 <div id="services" class="card">
+
   <h2>Our Services</h2>
 
   <div class="grid">
 
     <div class="box">
-      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
+      <img src="work1.jpg" alt="">
       <div>Electrical Wiring</div>
     </div>
 
     <div class="box">
-      <img src="https://images.unsplash.com/photo-1581091870622-1e7a6c0a9f5c">
+      <img src="work2.jpg" alt="">
       <div>Plumbing Installation</div>
     </div>
 
     <div class="box">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      <img src="work3.jpg" alt="">
       <div>Repairs & Maintenance</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="card">
+
+  <h2>Recent Projects</h2>
+
+  <div class="grid">
+
+    <div class="box">
+      <img src="gallery1.jpg" alt="">
+      <div>House Wiring</div>
+    </div>
+
+    <div class="box">
+      <img src="gallery2.jpg" alt="">
+      <div>Water Installation</div>
+    </div>
+
+    <div class="box">
+      <img src="gallery3.jpg" alt="">
+      <div>Electrical Maintenance</div>
     </div>
 
   </div>
@@ -212,70 +283,51 @@ footer {
 
 <!-- CONTACT -->
 <div id="contact" class="card">
+
   <h2>Contact Us</h2>
 
   <p>📍 Usenge, Bondo, Kenya</p>
   <p>📞 +254712910613</p>
 
-  <a class="btn whatsapp" href="https://wa.me/254712910613">WhatsApp</a>
-  <a class="btn call" href="tel:+254712910613">Call Now</a>
+  <a class="btn whatsapp" href="https://wa.me/254712910613">
+    WhatsApp
+  </a>
 
-  <h3>Send Service Request</h3>
+  <a class="btn call" href="tel:+254712910613">
+    Call
+  </a>
 
-  <form id="serviceForm">
-    <input id="name" placeholder="Your Name" required>
-    <input id="phone" placeholder="Phone Number" required>
-    <textarea id="message" placeholder="Describe your problem" required></textarea>
+  <h3>Request a Service</h3>
+
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Phone Number">
+    <textarea rows="5" placeholder="Describe your issue"></textarea>
     <button type="submit">Submit Request</button>
   </form>
 
-  <h3>Location</h3>
+  <h3>Our Location</h3>
+
   <iframe
     src="https://www.google.com/maps?q=Usenge%20Bondo%20Kenya&output=embed"
-    width="100%" height="250" style="border:0;border-radius:10px;">
+    width="100%"
+    height="250"
+    style="border:0;border-radius:10px;">
   </iframe>
 
 </div>
 
 </div>
 
-<!-- FLOAT -->
-<a class="float" href="https://wa.me/254712910613">💬 Chat</a>
+<!-- FLOATING BUTTON -->
+<a class="float" href="https://wa.me/254712910613">
+💬 Chat
+</a>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 S-Family Limited | All Rights Reserved
+  © 2026 S-Family Limited | Electrical & Plumbing Services
 </footer>
 
-<!-- FIREBASE (COMMERCIAL BACKEND) -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "PASTE_YOURS",
-  authDomain: "PASTE_YOURS",
-  projectId: "PASTE_YOURS",
-  storageBucket: "PASTE_YOURS",
-  messagingSenderId: "PASTE_YOURS",
-  appId: "PASTE_YOURS"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-document.getElementById("serviceForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  await addDoc(collection(db, "requests"), {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    message: document.getElementById("message").value,
-    time: new Date()
-  });
-
-  alert("Request submitted successfully!");
-});
-</script>
-
 </body>
-</html>
+    </html>
