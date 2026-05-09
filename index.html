@@ -6,19 +6,24 @@
 
 <title>S-Family Limited | Electrical & Plumbing Services</title>
 
-<meta name="description" content="Professional electrical and plumbing services in Usenge, Bondo, Kenya.">
+<meta name="description" content="Trusted electrical and plumbing services in Usenge, Bondo, Kenya.">
+<meta name="keywords" content="electrician Bondo, plumber Usenge, electrical services Kenya">
+<meta name="author" content="S-Family Limited">
+
+<meta property="og:title" content="S-Family Limited | Electrical & Plumbing Services">
+<meta property="og:description" content="Professional electrical and plumbing services in Usenge, Bondo, Kenya.">
+<meta property="og:image" content="work1.jpg">
+
+<link rel="icon" href="logo.png">
 
 <style>
-
 :root{
-  --primary:#0d6efd;
-  --dark:#0a58ca;
+  --primary:#0f766e;
+  --dark:#064e3b;
   --light:#f4f6f8;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
   margin:0;
@@ -27,7 +32,7 @@ body{
   color:#333;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav{
   position:sticky;
   top:0;
@@ -45,14 +50,22 @@ nav .logo{
   font-weight:bold;
 }
 
-nav a{
+nav div a{
   color:white;
   text-decoration:none;
   margin-left:15px;
   font-weight:bold;
 }
 
-/* HERO SECTION */
+nav div a:hover{
+  text-decoration:underline;
+}
+
+nav button{
+  display:none;
+}
+
+/* HERO */
 .hero{
   background:linear-gradient(135deg,var(--primary),var(--dark));
   color:white;
@@ -60,26 +73,10 @@ nav a{
   padding:90px 20px;
 }
 
-.hero h1{
-  margin:0;
-  font-size:45px;
-}
+.hero h1{ margin:0; font-size:45px; }
+.hero p{ margin-top:10px; font-size:18px; }
 
-.hero p{
-  margin-top:10px;
-  font-size:18px;
-}
-
-.hero .btn{
-  margin-top:20px;
-}
-
-/* GENERAL */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
+.container{ max-width:1100px; margin:auto; padding:20px; }
 
 .card{
   background:white;
@@ -89,9 +86,7 @@ nav a{
   box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-h2{
-  color:var(--primary);
-}
+h2{ color:var(--primary); }
 
 /* BUTTONS */
 .btn{
@@ -103,15 +98,10 @@ h2{
   font-weight:bold;
 }
 
-.whatsapp{
-  background:#25D366;
-}
+.whatsapp{ background:#25D366; }
+.call{ background:var(--primary); }
 
-.call{
-  background:var(--primary);
-}
-
-/* SERVICES */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -123,33 +113,19 @@ h2{
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 3px 10px rgba(0,0,0,0.1);
-  transition:0.3s;
 }
 
-.box:hover{
-  transform:translateY(-5px);
-}
+.box img{ width:100%; height:200px; object-fit:cover; }
 
-.box img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
+.box div{ padding:15px; text-align:center; font-weight:bold; }
 
-.box div{
-  padding:15px;
-  font-weight:bold;
-  text-align:center;
-}
-
-/* CONTACT FORM */
-input, textarea{
+/* FORM */
+input,textarea{
   width:100%;
   padding:12px;
   margin-top:10px;
   border-radius:8px;
   border:1px solid #ccc;
-  box-sizing:border-box;
 }
 
 button{
@@ -164,7 +140,7 @@ button{
   cursor:pointer;
 }
 
-/* FLOATING WHATSAPP */
+/* FLOAT */
 .float{
   position:fixed;
   bottom:20px;
@@ -174,8 +150,6 @@ button{
   padding:15px 18px;
   border-radius:50px;
   text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
@@ -184,9 +158,33 @@ footer{
   color:white;
   text-align:center;
   padding:20px;
-  margin-top:30px;
 }
 
+/* MOBILE */
+@media(max-width:768px){
+  nav div{
+    display:none;
+    flex-direction:column;
+    background:var(--primary);
+    position:absolute;
+    top:60px;
+    right:0;
+    width:200px;
+    padding:10px;
+  }
+
+  nav.active div{
+    display:flex;
+  }
+
+  nav button{
+    display:block;
+    background:none;
+    border:none;
+    color:white;
+    font-size:26px;
+  }
+}
 </style>
 </head>
 
@@ -195,6 +193,8 @@ footer{
 <!-- NAV -->
 <nav>
   <div class="logo">S-FAMILY LTD</div>
+
+  <button onclick="toggleMenu()">☰</button>
 
   <div>
     <a href="#about">About</a>
@@ -207,15 +207,11 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <h1>S-Family Limited</h1>
-  <p>Professional Electrical & Plumbing Services</p>
+  <p>Electrical & Plumbing Services in Usenge & Bondo</p>
+  <p>✔ Fast | ✔ Reliable | ✔ Affordable</p>
 
-  <a class="btn whatsapp" href="https://wa.me/254712910613">
-    WhatsApp Us
-  </a>
-
-  <a class="btn call" href="tel:+254712910613">
-    Call Now
-  </a>
+  <a class="btn whatsapp" href="https://wa.me/254712910613">WhatsApp</a>
+  <a class="btn call" href="tel:+254712910613">Call Now</a>
 </section>
 
 <div class="container">
@@ -223,111 +219,95 @@ footer{
 <!-- ABOUT -->
 <div id="about" class="card">
   <h2>About Us</h2>
-
   <p>
-    S-Family Limited provides trusted electrical and plumbing services
-    in Usenge, Bondo and surrounding areas.
-    We focus on quality workmanship, reliability and customer satisfaction.
+    S-Family Limited provides trusted electrical and plumbing services in Usenge, Bondo and surrounding areas.
   </p>
 </div>
 
 <!-- SERVICES -->
 <div id="services" class="card">
-
   <h2>Our Services</h2>
-
   <div class="grid">
-
     <div class="box">
-      <img src="work1.jpg" alt="">
+      <img src="work1.jpg">
       <div>Electrical Wiring</div>
     </div>
-
     <div class="box">
-      <img src="work2.jpg" alt="">
+      <img src="work2.jpg">
       <div>Plumbing Installation</div>
     </div>
-
     <div class="box">
-      <img src="work3.jpg" alt="">
+      <img src="work3.jpg">
       <div>Repairs & Maintenance</div>
     </div>
-
   </div>
+</div>
+
+<!-- EMERGENCY -->
+<div class="card">
+  <h2>Emergency Services</h2>
+  <p>We respond fast to electrical and plumbing emergencies.</p>
+  <a class="btn whatsapp" href="https://wa.me/254712910613">Get Help Now</a>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="card">
+  <h2>What Clients Say</h2>
+  <p>“Fast and professional service.” – John</p>
+  <p>“Very reliable plumber.” – Mary</p>
 </div>
 
 <!-- GALLERY -->
 <div id="gallery" class="card">
-
-  <h2>Recent Projects</h2>
-
+  <h2>Gallery</h2>
   <div class="grid">
-
-    <div class="box">
-      <img src="gallery1.jpg" alt="">
-      <div>House Wiring</div>
-    </div>
-
-    <div class="box">
-      <img src="gallery2.jpg" alt="">
-      <div>Water Installation</div>
-    </div>
-
-    <div class="box">
-      <img src="gallery3.jpg" alt="">
-      <div>Electrical Maintenance</div>
-    </div>
-
+    <div class="box"><img src="gallery1.jpg"><div>House Wiring</div></div>
+    <div class="box"><img src="gallery2.jpg"><div>Water Installation</div></div>
+    <div class="box"><img src="gallery3.jpg"><div>Maintenance</div></div>
   </div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="card">
-
   <h2>Contact Us</h2>
-
-  <p>📍 Usenge, Bondo, Kenya</p>
+  <p>📍 Usenge, Bondo</p>
   <p>📞 +254712910613</p>
 
-  <a class="btn whatsapp" href="https://wa.me/254712910613">
-    WhatsApp
-  </a>
+  <a class="btn whatsapp" href="https://wa.me/254712910613">WhatsApp</a>
+  <a class="btn call" href="tel:+254712910613">Call</a>
 
-  <a class="btn call" href="tel:+254712910613">
-    Call
-  </a>
-
-  <h3>Request a Service</h3>
-
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="Phone Number">
-    <textarea rows="5" placeholder="Describe your issue"></textarea>
-    <button type="submit">Submit Request</button>
+  <h3>Request Service</h3>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input name="name" placeholder="Your Name" required>
+    <input name="phone" placeholder="Phone Number" required>
+    <textarea name="message" placeholder="Describe your issue" required></textarea>
+    <button type="submit">Send Request</button>
   </form>
 
-  <h3>Our Location</h3>
-
+  <h3>Location</h3>
   <iframe
     src="https://www.google.com/maps?q=Usenge%20Bondo%20Kenya&output=embed"
-    width="100%"
-    height="250"
+    width="100%" height="250"
     style="border:0;border-radius:10px;">
   </iframe>
-
 </div>
 
 </div>
 
-<!-- FLOATING BUTTON -->
-<a class="float" href="https://wa.me/254712910613">
-💬 Chat
-</a>
+<!-- FLOAT -->
+<a class="float" href="https://wa.me/254712910613">💬</a>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 S-Family Limited | Electrical & Plumbing Services
+  © 2026 S-Family Limited
 </footer>
+
+<!-- JS -->
+<script>
+function toggleMenu(){
+  document.querySelector("nav").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
