@@ -30,11 +30,12 @@ body{
 /* HERO SECTION */
 .hero{
   position:relative;
-  height:90vh;
+  height:60vh;
+  min-height:400px;
   overflow:hidden;
 }
 
-/* SLIDER */
+/* SLIDES */
 .slides{
   position:absolute;
   width:100%;
@@ -73,13 +74,25 @@ body{
 }
 
 .overlay h1{
-  font-size:50px;
+  font-size:38px;
   margin:0;
 }
 
 .overlay p{
-  font-size:20px;
+  font-size:17px;
   margin-top:10px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 20px;
+  border-radius:8px;
+  background:var(--primary);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 /* CONTAINER */
@@ -158,18 +171,6 @@ button{
   cursor:pointer;
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 20px;
-  border-radius:8px;
-  background:var(--primary);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
 /* FOOTER */
 footer{
   background:#222;
@@ -182,12 +183,16 @@ footer{
 /* MOBILE */
 @media(max-width:768px){
 
+  .hero{
+    height:50vh;
+  }
+
   .overlay h1{
-    font-size:35px;
+    font-size:30px;
   }
 
   .overlay p{
-    font-size:16px;
+    font-size:15px;
   }
 
 }
@@ -197,26 +202,42 @@ footer{
 
 <body>
 
-<!-- HERO WITH MOVING IMAGES -->
+<!-- HERO -->
 <header class="hero">
 
   <div class="slides">
-    <img src="work1.jpg" class="slide active" alt="Electrical Work">
-    <img src="work2.jpg" class="slide" alt="Plumbing Work">
-    <img src="work3.jpg" class="slide" alt="Solar Installation">
-    <img src="work4.jpg" class="slide" alt="Repair Services">
+
+    <img src="work1.jpg"
+         class="slide active"
+         alt="Electrical Work">
+
+    <img src="work2.jpg"
+         class="slide"
+         alt="Plumbing Work">
+
+    <img src="work3.jpg"
+         class="slide"
+         alt="Solar Installation">
+
+    <img src="work4.jpg"
+         class="slide"
+         alt="Repair Services">
+
   </div>
 
   <div class="overlay">
+
     <h1>S-Family Limited</h1>
 
     <p>
       Electrical • Plumbing • Solar Services
     </p>
 
-    <a class="btn" href="https://wa.me/254712910613">
-      WhatsApp Us
+    <a class="btn"
+       href="https://wa.me/254712910613">
+       WhatsApp Us
     </a>
+
   </div>
 
 </header>
@@ -244,17 +265,17 @@ footer{
   <div class="grid">
 
     <div class="box">
-      <img src="work1.jpg" alt="Electrical Wiring">
+      <img src="work1.jpg" alt="Electrical">
       <div>⚡ Electrical Wiring</div>
     </div>
 
     <div class="box">
-      <img src="work2.jpg" alt="Plumbing Installation">
+      <img src="work2.jpg" alt="Plumbing">
       <div>🚰 Plumbing Installation</div>
     </div>
 
     <div class="box">
-      <img src="work3.jpg" alt="Solar Installation">
+      <img src="work3.jpg" alt="Solar">
       <div>☀ Solar Installation</div>
     </div>
 
@@ -286,24 +307,35 @@ footer{
 
   <form onsubmit="sendRequest(event)">
 
-    <input id="name" placeholder="Your Name" required>
+    <input id="name"
+           placeholder="Your Name"
+           required>
 
-    <input id="phone" placeholder="Phone Number" required>
+    <input id="phone"
+           placeholder="Phone Number"
+           required>
 
-    <input id="location" placeholder="Your Location" required>
+    <input id="location"
+           placeholder="Your Location"
+           required>
 
     <select id="service" required>
-      <option value="">Select Service</option>
+
+      <option value="">
+        Select Service
+      </option>
+
       <option>Electrical</option>
       <option>Plumbing</option>
       <option>Solar</option>
       <option>Repairs</option>
+
     </select>
 
     <textarea id="issue"
-      rows="5"
-      placeholder="Describe your problem"
-      required></textarea>
+              rows="5"
+              placeholder="Describe your problem"
+              required></textarea>
 
     <button type="submit">
       Send Request via WhatsApp
@@ -324,7 +356,9 @@ footer{
 
   <a class="btn"
      href="https://wa.me/254712910613">
+
      Chat on WhatsApp
+
   </a>
 
 </div>
@@ -349,9 +383,10 @@ footer{
   © 2026 S-Family Limited | All Rights Reserved
 </footer>
 
-<!-- SLIDER SCRIPT -->
+<!-- SCRIPT -->
 <script>
 
+/* IMAGE SLIDER */
 let slides = document.querySelectorAll(".slide");
 
 let index = 0;
@@ -366,7 +401,7 @@ setInterval(() => {
 
 }, 3000);
 
-/* WHATSAPP FORM */
+/* WHATSAPP REQUEST */
 function sendRequest(e){
 
   e.preventDefault();
