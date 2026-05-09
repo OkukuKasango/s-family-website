@@ -4,94 +4,120 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>S-Family Limited | Electrical, Plumbing & Solar Services</title>
+<title>S-Family Limited | Electrical & Plumbing Services</title>
 
-<meta name="description" content="Trusted electrical, plumbing and solar services in Usenge and Bondo, Kenya.">
-<meta name="keywords" content="electrician Bondo, plumber Usenge, solar installation Kenya">
+<meta name="description" content="Trusted electrical and plumbing services in Usenge, Bondo, Kenya.">
+<meta name="keywords" content="electrician Bondo, plumber Usenge, electrical services Kenya">
 <meta name="author" content="S-Family Limited">
+
+<link rel="icon" href="logo.png">
 
 <style>
 :root{
   --primary:#0f766e;
   --dark:#064e3b;
+  --light:#f4f6f8;
 }
+
+html{ scroll-behavior:smooth; }
 
 body{
   margin:0;
-  font-family:Arial;
-  background:#f4f6f8;
+  font-family:Arial,sans-serif;
+  background:var(--light);
   color:#333;
 }
 
-/* HEADER */
-header{
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:var(--primary);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+}
+
+nav .logo{
+  color:white;
+  font-weight:bold;
+}
+
+nav div a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
   background:linear-gradient(135deg,var(--primary),var(--dark));
   color:white;
   text-align:center;
-  padding:80px 20px;
+  padding:90px 20px;
 }
 
-header h1{
-  margin:0;
-  font-size:40px;
-}
-
-header p{
-  font-size:18px;
-}
-
-/* CONTAINER */
 .container{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
   padding:20px;
 }
 
-/* CARD */
 .card{
   background:white;
   padding:20px;
   margin:20px 0;
   border-radius:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-h2{
-  color:var(--primary);
-}
+h2{ color:var(--primary); }
 
-/* SERVICE GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
 .box{
   background:white;
-  padding:20px;
-  text-align:center;
   border-radius:12px;
-  box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+
+.box img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.box div{
+  padding:10px;
+  text-align:center;
   font-weight:bold;
-  transition:0.3s;
 }
 
-.box:hover{
-  transform:scale(1.05);
-  background:var(--primary);
-  color:white;
-}
-
-/* BUTTON */
-.btn{
-  display:inline-block;
+/* FORM */
+input,textarea{
+  width:100%;
+  padding:12px;
   margin-top:10px;
-  padding:12px 18px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
   background:var(--primary);
   color:white;
-  text-decoration:none;
   border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
 }
 
 footer{
@@ -99,72 +125,82 @@ footer{
   background:#222;
   color:white;
   padding:20px;
-  margin-top:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header>
+<nav>
+  <div class="logo">S-FAMILY LTD</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
   <h1>S-Family Limited</h1>
-  <p>Electrical • Plumbing • Solar Services in Usenge & Bondo</p>
-</header>
+  <p>Electrical & Plumbing Services in Usenge & Bondo</p>
+</section>
 
 <div class="container">
 
 <!-- ABOUT -->
-<div class="card">
+<div id="about" class="card">
   <h2>About Us</h2>
-  <p>
-    We provide trusted and affordable electrical, plumbing, and solar installation services
-    across Usenge, Bondo, and nearby areas. Fast response and professional work guaranteed.
-  </p>
+  <p>We provide trusted electrical and plumbing services in Usenge, Bondo and surrounding areas.</p>
 </div>
 
 <!-- SERVICES -->
-<div class="card">
+<div id="services" class="card">
   <h2>Our Services</h2>
-
   <div class="grid">
-    <div class="box">⚡ Electrical Wiring</div>
-    <div class="box">🚰 Plumbing Installation</div>
-    <div class="box">☀ Solar Installation</div>
-    <div class="box">🔧 Repairs & Maintenance</div>
+    <div class="box">
+      <img src="work1.jpg">
+      <div>Electrical Wiring</div>
+    </div>
+    <div class="box">
+      <img src="work2.jpg">
+      <div>Plumbing Installation</div>
+    </div>
+    <div class="box">
+      <img src="work3.jpg">
+      <div>Repairs & Maintenance</div>
+    </div>
   </div>
 </div>
 
-<!-- WHY CHOOSE US -->
-<div class="card">
-  <h2>Why Choose Us</h2>
-  <p>✔ Fast response</p>
-  <p>✔ Affordable pricing</p>
-  <p>✔ Experienced technicians</p>
-  <p>✔ Trusted in Bondo & Usenge</p>
-</div>
-
 <!-- CONTACT -->
-<div class="card">
+<div id="contact" class="card">
   <h2>Contact Us</h2>
 
   <p>📍 Usenge, Bondo, Kenya</p>
   <p>📞 +254712910613</p>
 
-  <a class="btn" href="https://wa.me/254712910613">WhatsApp Us</a>
-</div>
+  <h3>Request Service</h3>
 
-<!-- ADMIN LINK -->
-<div class="card">
-  <h2>Business Portal</h2>
-  <p>For internal job management only</p>
-  <a class="btn" href="crm.html">Open CRM System</a>
+  <form action="https://formspree.io/f/xykonogz" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <!-- NEW LOCATION FIELD -->
+    <input type="text" name="location" placeholder="Your Location (Estate / Village / Town)" required>
+
+    <textarea name="message" rows="5" placeholder="Describe your issue" required></textarea>
+
+    <button type="submit">Send Request</button>
+
+  </form>
 </div>
 
 </div>
 
 <footer>
-  © 2026 S-Family Limited | All Rights Reserved
+  © 2026 S-Family Limited | Electrical & Plumbing Services
 </footer>
 
 </body>
