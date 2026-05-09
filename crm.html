@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S-Family CRM System</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f6f8;
+}
+
+header{
+  background:#0f766e;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:20px 0;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{ color:#0f766e; }
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  background:#0f766e;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+th,td{
+  border:1px solid #ddd;
+  padding:8px;
+  font-size:14px;
+}
+
+th{
+  background:#0f766e;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>S-Family CRM Dashboard</h2>
+</header>
+
+<div class="container">
+
+<!-- FORM -->
+<div class="card">
+  <h2>New Job Request</h2>
+
+  <input id="name" placeholder="Customer Name">
+  <input id="phone" placeholder="Phone Number">
+  <input id="location" placeholder="Location (Estate / Town)">
+  <input id="service" placeholder="Service (Electrical / Plumbing / Solar)">
+  <textarea id="issue" placeholder="Describe the problem"></textarea>
+
+  <button onclick="saveData()">💾 Save Job</button>
+  <button class="whatsapp" onclick="sendWhatsApp()">📲 Send WhatsApp</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="card">
+  <h2>Saved Jobs</h2>
+
+  <button onclick="loadData()">🔄 Refresh</button>
+  <button onclick="clearData()" style="background:#d11;">🗑 Clear All</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Service</th>
+        <th>Location</th>
+        <th>Issue</th>
+      </tr>
+    </thead>
+
+    <tbody id="table"></tbody>
+  </table>
+</div>
+
+</div>
+
+<script>
+
+// SAVE DATA
+function saveData(){
+  let data = {
+    name:document.getElementById("name").value,
+    phone:document.getElementById("phone").value,
+    service:document.getElementById("service").value,
+    location:document.getElementById("location").value,
+    issue:document.getElementById("issue").value
+  };
+
+  let records = JSON.parse(localStorage.getItem("jobs") || "[]");
+  records.push(data);
+  localStorage.setItem("jobs", JSON.stringify(records));
+
+  alert("Job Saved!");
+  loadData();
+}
+
+// LOAD DATA
+function loadData(){
+  let records = JSON.parse(localStorage.getItem("jobs") || "[]");
+  let table = document.getElementById("table");
+
+  table.innerHTML = "";
+
+  records.forEach(r=>{
+    table.innerHTML += `
+      <tr>
+        <td>${r.name}</td>
+        <td>${r.phone}</td>
+        <td>${r.service}</td>
+        <td>${r.location}</td>
+        <td>${r.issue}</td>
+      </tr>
+    `;
+  });
+}
+
+// WHATSAPP SEND
+function sendWhatsApp(){
+  let msg =
+`New Job Request:
+Name: ${document.getElementById("name").value}
+Phone: ${document.getElementById("phone").value}
+Service: ${document.getElementById("service").value}
+Location: ${document.getElementById("location").value}
+Issue: ${document.getElementById("issue").value}`;
+
+  let url = "https://wa.me/254712910613?text=" + encodeURIComponent(msg);
+
+  window
