@@ -6,39 +6,85 @@
 
 <title>S-Family Limited | Electrical, Plumbing & Solar Services</title>
 
+<meta name="description" content="Trusted electrical, plumbing and solar services in Usenge and Bondo, Kenya.">
+
 <style>
+
 :root{
   --primary:#0f766e;
   --dark:#064e3b;
+  --light:#f4f6f8;
+}
+
+*{
+  box-sizing:border-box;
 }
 
 body{
   margin:0;
-  font-family:Arial;
-  background:#f4f6f8;
+  font-family:Arial,sans-serif;
+  background:var(--light);
   color:#333;
 }
 
-/* HEADER */
-header{
-  background:linear-gradient(135deg,var(--primary),var(--dark));
-  color:white;
+/* HERO SECTION */
+.hero{
+  position:relative;
+  height:90vh;
+  overflow:hidden;
+}
+
+/* SLIDER */
+.slides{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+/* OVERLAY */
+.overlay{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
   text-align:center;
-  padding:70px 20px;
+  color:white;
+  padding:20px;
 }
 
-header h1{
+.overlay h1{
+  font-size:50px;
   margin:0;
-  font-size:38px;
 }
 
-header p{
-  font-size:18px;
+.overlay p{
+  font-size:20px;
+  margin-top:10px;
 }
 
 /* CONTAINER */
 .container{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
   padding:20px;
 }
@@ -59,53 +105,50 @@ h2{
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
-/* BOX */
+/* SERVICE BOX */
 .box{
   background:white;
-  padding:15px;
-  text-align:center;
   border-radius:12px;
+  overflow:hidden;
   box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  transition:0.3s;
+  text-align:center;
   font-weight:bold;
 }
 
-/* IMAGES */
-.box img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  border-radius:10px;
-  margin-bottom:10px;
+.box:hover{
+  transform:translateY(-5px);
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  padding:12px 18px;
-  background:var(--primary);
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
-  margin-top:10px;
+.box img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.box div{
+  padding:15px;
 }
 
 /* FORM */
-input,select,textarea{
+input,
+select,
+textarea{
   width:100%;
   padding:12px;
   margin-top:10px;
   border-radius:8px;
   border:1px solid #ccc;
-  box-sizing:border-box;
+  font-size:15px;
 }
 
 button{
   width:100%;
-  padding:12px;
+  padding:14px;
   margin-top:10px;
   border:none;
   border-radius:8px;
@@ -115,73 +158,139 @@ button{
   cursor:pointer;
 }
 
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 20px;
+  border-radius:8px;
+  background:var(--primary);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
 /* FOOTER */
 footer{
-  text-align:center;
   background:#222;
   color:white;
+  text-align:center;
   padding:20px;
-  margin-top:20px;
+  margin-top:30px;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .overlay h1{
+    font-size:35px;
+  }
+
+  .overlay p{
+    font-size:16px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header>
-  <h1>S-Family Limited</h1>
-  <p>Electrical • Plumbing • Solar Services in Usenge & Bondo</p>
+<!-- HERO WITH MOVING IMAGES -->
+<header class="hero">
+
+  <div class="slides">
+    <img src="work1.jpg" class="slide active" alt="Electrical Work">
+    <img src="work2.jpg" class="slide" alt="Plumbing Work">
+    <img src="work3.jpg" class="slide" alt="Solar Installation">
+    <img src="work4.jpg" class="slide" alt="Repair Services">
+  </div>
+
+  <div class="overlay">
+    <h1>S-Family Limited</h1>
+
+    <p>
+      Electrical • Plumbing • Solar Services
+    </p>
+
+    <a class="btn" href="https://wa.me/254712910613">
+      WhatsApp Us
+    </a>
+  </div>
+
 </header>
 
 <div class="container">
 
 <!-- ABOUT -->
 <div class="card">
+
   <h2>About Us</h2>
+
   <p>
-    We provide professional and affordable electrical, plumbing, and solar installation services
-    across Usenge, Bondo, and nearby areas.
+    S-Family Limited provides trusted and affordable electrical,
+    plumbing and solar installation services across Usenge,
+    Bondo and surrounding areas.
   </p>
+
 </div>
 
 <!-- SERVICES -->
 <div class="card">
+
   <h2>Our Services</h2>
 
   <div class="grid">
 
     <div class="box">
-      <img src="work1.jpg" alt="Electrical">
-      ⚡ Electrical Wiring
+      <img src="work1.jpg" alt="Electrical Wiring">
+      <div>⚡ Electrical Wiring</div>
     </div>
 
     <div class="box">
-      <img src="work2.jpg" alt="Plumbing">
-      🚰 Plumbing Installation
+      <img src="work2.jpg" alt="Plumbing Installation">
+      <div>🚰 Plumbing Installation</div>
     </div>
 
     <div class="box">
-      <img src="work3.jpg" alt="Solar">
-      ☀ Solar Installation
+      <img src="work3.jpg" alt="Solar Installation">
+      <div>☀ Solar Installation</div>
     </div>
 
     <div class="box">
       <img src="work4.jpg" alt="Repairs">
-      🔧 Repairs & Maintenance
+      <div>🔧 Repairs & Maintenance</div>
     </div>
 
   </div>
+
+</div>
+
+<!-- WHY CHOOSE US -->
+<div class="card">
+
+  <h2>Why Choose Us</h2>
+
+  <p>✔ Fast response</p>
+  <p>✔ Affordable pricing</p>
+  <p>✔ Professional workmanship</p>
+  <p>✔ Trusted in Bondo & Usenge</p>
+
 </div>
 
 <!-- REQUEST FORM -->
 <div class="card">
+
   <h2>Request a Service</h2>
 
   <form onsubmit="sendRequest(event)">
+
     <input id="name" placeholder="Your Name" required>
+
     <input id="phone" placeholder="Phone Number" required>
-    <input id="location" placeholder="Your Location (Estate / Town)" required>
+
+    <input id="location" placeholder="Your Location" required>
 
     <select id="service" required>
       <option value="">Select Service</option>
@@ -191,36 +300,75 @@ footer{
       <option>Repairs</option>
     </select>
 
-    <textarea id="issue" placeholder="Describe your problem" required></textarea>
+    <textarea id="issue"
+      rows="5"
+      placeholder="Describe your problem"
+      required></textarea>
 
-    <button type="submit">Send Request via WhatsApp</button>
+    <button type="submit">
+      Send Request via WhatsApp
+    </button>
+
   </form>
+
 </div>
 
 <!-- CONTACT -->
 <div class="card">
+
   <h2>Contact Us</h2>
 
   <p>📍 Usenge, Bondo, Kenya</p>
+
   <p>📞 +254712910613</p>
 
-  <a class="btn" href="https://wa.me/254712910613">Chat on WhatsApp</a>
+  <a class="btn"
+     href="https://wa.me/254712910613">
+     Chat on WhatsApp
+  </a>
+
 </div>
 
-<!-- CRM LINK -->
+<!-- CRM -->
 <div class="card">
-  <h2>Admin Portal</h2>
-  <a class="btn" href="crm.html">Open CRM System</a>
-</div>
+
+  <h2>Business Portal</h2>
+
+  <p>Internal business management system</p>
+
+  <a class="btn" href="crm.html">
+    Open CRM System
+  </a>
 
 </div>
 
+</div>
+
+<!-- FOOTER -->
 <footer>
   © 2026 S-Family Limited | All Rights Reserved
 </footer>
 
+<!-- SLIDER SCRIPT -->
 <script>
+
+let slides = document.querySelectorAll(".slide");
+
+let index = 0;
+
+setInterval(() => {
+
+  slides[index].classList.remove("active");
+
+  index = (index + 1) % slides.length;
+
+  slides[index].classList.add("active");
+
+}, 3000);
+
+/* WHATSAPP FORM */
 function sendRequest(e){
+
   e.preventDefault();
 
   let msg =
@@ -231,8 +379,13 @@ Location: ${document.getElementById("location").value}
 Service: ${document.getElementById("service").value}
 Issue: ${document.getElementById("issue").value}`;
 
-  window.open("https://wa.me/254712910613?text=" + encodeURIComponent(msg));
+  window.open(
+    "https://wa.me/254712910613?text=" +
+    encodeURIComponent(msg)
+  );
+
 }
+
 </script>
 
 </body>
