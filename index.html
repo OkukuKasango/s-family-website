@@ -4,122 +4,178 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>S-Family Limited</title>
+<title>S-Family Limited | Electrical & Plumbing Services</title>
+
+<meta name="description" content="Professional electrical and plumbing services in Usenge, Bondo, Kenya.">
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#f4f6f8;
+
+:root{
+  --primary:#0d6efd;
+  --dark:#0a58ca;
+  --light:#f4f6f8;
 }
 
-<!-- HERO / COVER -->
-<div class="hero" style="
-  background: linear-gradient(135deg, #111, #222);
-  color: white;
-  text-align: center;
-  padding: 90px 20px;
-">
+html{
+  scroll-behavior:smooth;
+}
 
-  <!-- LOGO -->
-  <img src="logo.png" alt="Logo" style="
-    width: 130px;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  ">
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#333;
+}
 
-  <h1 style="margin:0; font-size:42px;">
-    S-Family Limited
-  </h1>
-
-  <p style="font-size:18px; opacity:0.9;">
-    Electrical & Plumbing Professionals
-  </p>
-
-</div>
-
-/* NAV */
+/* NAVIGATION */
 nav{
-  background:#0d6efd;
-  padding:10px;
+  position:sticky;
+  top:0;
+  background:var(--primary);
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  z-index:1000;
+}
+
+nav .logo{
+  color:white;
+  font-size:20px;
+  font-weight:bold;
 }
 
 nav a{
   color:white;
-  margin:0 10px;
   text-decoration:none;
+  margin-left:15px;
   font-weight:bold;
 }
 
-/* SECTIONS */
+/* HERO SECTION */
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--dark));
+  color:white;
+  text-align:center;
+  padding:90px 20px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:45px;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+}
+
+.hero .btn{
+  margin-top:20px;
+}
+
+/* GENERAL */
 .container{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
   padding:20px;
 }
 
 .card{
   background:white;
+  border-radius:12px;
   padding:20px;
   margin:20px 0;
-  border-radius:10px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-.box{
-  background:white;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-.box img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.box div{
-  padding:10px;
-  font-weight:bold;
-  text-align:center;
+h2{
+  color:var(--primary);
 }
 
 /* BUTTONS */
 .btn{
   display:inline-block;
-  padding:12px 15px;
+  padding:12px 18px;
   border-radius:8px;
   color:white;
   text-decoration:none;
   font-weight:bold;
 }
 
-.whatsapp{background:#25D366;}
-.call{background:#0d6efd;}
+.whatsapp{
+  background:#25D366;
+}
 
-/* FLOAT */
+.call{
+  background:var(--primary);
+}
+
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.box{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.box:hover{
+  transform:translateY(-5px);
+}
+
+.box img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.box div{
+  padding:15px;
+  font-weight:bold;
+  text-align:center;
+}
+
+/* CONTACT FORM */
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  box-sizing:border-box;
+}
+
+button{
+  margin-top:10px;
+  padding:12px;
+  width:100%;
+  border:none;
+  background:var(--primary);
+  color:white;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* FLOATING WHATSAPP */
 .float{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:white;
-  padding:15px;
+  padding:15px 18px;
   border-radius:50px;
   text-decoration:none;
   font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* FOOTER */
@@ -127,62 +183,73 @@ footer{
   background:#222;
   color:white;
   text-align:center;
-  padding:15px;
+  padding:20px;
+  margin-top:30px;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
-<!-- HERO (COVER PHOTO ONLY) -->
-<div class="hero">
-
-  <!-- CHANGE THIS FILE NAME TO YOUR LOGO -->
-  <img src="logo.png" alt="Logo">
-
-  <h1>S-Family Limited</h1>
-  <p>Electrical & Plumbing Services</p>
-
-</div>
-
 <!-- NAV -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
+  <div class="logo">S-FAMILY LTD</div>
+
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>S-Family Limited</h1>
+  <p>Professional Electrical & Plumbing Services</p>
+
+  <a class="btn whatsapp" href="https://wa.me/254712910613">
+    WhatsApp Us
+  </a>
+
+  <a class="btn call" href="tel:+254712910613">
+    Call Now
+  </a>
+</section>
 
 <div class="container">
 
 <!-- ABOUT -->
 <div id="about" class="card">
   <h2>About Us</h2>
+
   <p>
-    We provide professional electrical and plumbing services in Usenge, Bondo.
-    Reliable, affordable and trusted by customers.
+    S-Family Limited provides trusted electrical and plumbing services
+    in Usenge, Bondo and surrounding areas.
+    We focus on quality workmanship, reliability and customer satisfaction.
   </p>
 </div>
 
 <!-- SERVICES -->
 <div id="services" class="card">
+
   <h2>Our Services</h2>
 
   <div class="grid">
 
     <div class="box">
-      <img src="work1.jpg">
+      <img src="work1.jpg" alt="">
       <div>Electrical Wiring</div>
     </div>
 
     <div class="box">
-      <img src="work2.jpg">
+      <img src="work2.jpg" alt="">
       <div>Plumbing Installation</div>
     </div>
 
     <div class="box">
-      <img src="work3.jpg">
+      <img src="work3.jpg" alt="">
       <div>Repairs & Maintenance</div>
     </div>
 
@@ -191,23 +258,24 @@ footer{
 
 <!-- GALLERY -->
 <div id="gallery" class="card">
-  <h2>Our Work</h2>
+
+  <h2>Recent Projects</h2>
 
   <div class="grid">
 
     <div class="box">
-      <img src="gallery1.jpg">
-      <div>Project 1</div>
+      <img src="gallery1.jpg" alt="">
+      <div>House Wiring</div>
     </div>
 
     <div class="box">
-      <img src="gallery2.jpg">
-      <div>Project 2</div>
+      <img src="gallery2.jpg" alt="">
+      <div>Water Installation</div>
     </div>
 
     <div class="box">
-      <img src="gallery3.jpg">
-      <div>Project 3</div>
+      <img src="gallery3.jpg" alt="">
+      <div>Electrical Maintenance</div>
     </div>
 
   </div>
@@ -215,23 +283,50 @@ footer{
 
 <!-- CONTACT -->
 <div id="contact" class="card">
+
   <h2>Contact Us</h2>
 
-  <p>📍 Usenge, Bondo</p>
+  <p>📍 Usenge, Bondo, Kenya</p>
   <p>📞 +254712910613</p>
 
-  <a class="btn whatsapp" href="https://wa.me/254712910613">WhatsApp</a>
-  <a class="btn call" href="tel:+254712910613">Call</a>
-</div>
+  <a class="btn whatsapp" href="https://wa.me/254712910613">
+    WhatsApp
+  </a>
+
+  <a class="btn call" href="tel:+254712910613">
+    Call
+  </a>
+
+  <h3>Request a Service</h3>
+
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Phone Number">
+    <textarea rows="5" placeholder="Describe your issue"></textarea>
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <h3>Our Location</h3>
+
+  <iframe
+    src="https://www.google.com/maps?q=Usenge%20Bondo%20Kenya&output=embed"
+    width="100%"
+    height="250"
+    style="border:0;border-radius:10px;">
+  </iframe>
 
 </div>
 
-<!-- FLOAT BUTTON -->
-<a class="float" href="https://wa.me/254712910613">💬</a>
+</div>
+
+<!-- FLOATING BUTTON -->
+<a class="float" href="https://wa.me/254712910613">
+💬 Chat
+</a>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 S-Family Limited
+  © 2026 S-Family Limited | Electrical & Plumbing Services
 </footer>
 
 </body>
