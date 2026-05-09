@@ -58,7 +58,11 @@ nav div a{
   padding:90px 20px;
 }
 
-.container{ max-width:1100px; margin:auto; padding:20px; }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
 
 .card{
   background:white;
@@ -94,12 +98,14 @@ h2{ color:var(--primary); }
   font-weight:bold;
 }
 
+/* FORM */
 input,textarea{
   width:100%;
   padding:12px;
   margin-top:10px;
   border-radius:8px;
   border:1px solid #ccc;
+  box-sizing:border-box;
 }
 
 button{
@@ -136,18 +142,20 @@ footer{
 
 <section class="hero">
   <h1>S-Family Limited</h1>
-  <p>Electrical & Plumbing Services</p>
+  <p>Electrical & Plumbing Services in Usenge & Bondo</p>
 </section>
 
 <div class="container">
 
+<!-- ABOUT -->
 <div id="about" class="card">
   <h2>About Us</h2>
-  <p>We offer electrical and plumbing services in Usenge and Bondo.</p>
+  <p>We provide trusted electrical and plumbing services in Usenge, Bondo and surrounding areas.</p>
 </div>
 
+<!-- SERVICES -->
 <div id="services" class="card">
-  <h2>Services</h2>
+  <h2>Our Services</h2>
   <div class="grid">
     <div class="box">
       <img src="work1.jpg">
@@ -155,36 +163,44 @@ footer{
     </div>
     <div class="box">
       <img src="work2.jpg">
-      <div>Plumbing</div>
+      <div>Plumbing Installation</div>
     </div>
     <div class="box">
       <img src="work3.jpg">
-      <div>Repairs</div>
+      <div>Repairs & Maintenance</div>
     </div>
   </div>
 </div>
 
-<!-- CONTACT SECTION FIXED -->
+<!-- CONTACT -->
 <div id="contact" class="card">
   <h2>Contact Us</h2>
 
-  <p>📍 Usenge, Bondo</p>
+  <p>📍 Usenge, Bondo, Kenya</p>
   <p>📞 +254712910613</p>
 
   <h3>Request Service</h3>
 
   <form action="https://formspree.io/f/xykonogz" method="POST">
+
     <input type="text" name="name" placeholder="Your Name" required>
+
     <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <!-- NEW LOCATION FIELD -->
+    <input type="text" name="location" placeholder="Your Location (Estate / Village / Town)" required>
+
     <textarea name="message" rows="5" placeholder="Describe your issue" required></textarea>
+
     <button type="submit">Send Request</button>
+
   </form>
 </div>
 
 </div>
 
 <footer>
-  © 2026 S-Family Limited
+  © 2026 S-Family Limited | Electrical & Plumbing Services
 </footer>
 
 </body>
